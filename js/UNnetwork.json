@@ -1,0 +1,209 @@
+var UNnetwork = [
+  {
+    "name": "Principal organs of the United Nations",
+    "parent": "null",
+    "level":"",
+    "children": [
+      {
+        "name": "UN General Assembly",
+        "level":"Green",
+        "children": [
+            {
+                "name": "Subsidiary Organs ",
+                "parent": "General Assembly",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":""}]
+            },  
+            { 
+                "name":"Funds and Programmes",
+                "level":"Green"
+            }, 
+            {
+                "name":"Research and Training",
+                "level":"Green"
+            },
+            {
+                "name":"Other Entities",
+                "level":"Green"
+            },
+            {
+                "name":"Related Organizations",
+                "level":"Green"
+            },
+            {
+                "name":"Peacebuilding Commission",
+                "level":"Green"
+            },
+            {
+                "name":"HLPF (High-level Political Forum on Sustainable Development",
+                "level":"Green"
+            }
+                    ]
+      },
+      {
+        "name": "UN Economic and Social council",
+        "level":"Blue",
+        "children": [
+            {
+            	"name":"Functional Commission",
+            	"parent":"Economic and Social council",
+                "level":"Blue",
+            	"children":[
+            	{
+            		  "name":"Crime",
+            		  "parent":"",
+                      "level":"Blue"},
+            	{
+            			"name":"Narcotic Drugs",
+                        "parent":"",
+            			"level":"Blue"},
+            	{
+            			"name":"Population and Development",
+                        "parent":"",
+            			"level":"Blue"}]
+            },
+            {
+            	"name":"Regional Commission",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECE",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+            	"name":"Other Bodies",
+                "parent":"",
+                "level":"Blue"
+            },
+            {
+            	"name":"Research and Training",
+            	"parent":"",
+                "level":"Blue"
+            },
+            {
+            	"name":"Specialized Agencies",
+            	"parent":"",
+                "level":"Blue"
+            }
+            ]
+      },
+      {
+        "name": "UN Security Council",
+        "parent": "",
+        "level":"Brown",
+        "children": [
+            {
+                "name":"Subsidiary Organs",
+                "parent":"Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"Counter-Terroism Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"International Residual Mechanism for Criminal Tribunals",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Military Stuff Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Peacekeeping operations and political missions",
+                        "level":"Brown"
+                    },
+
+                    {
+                        "name":"Sanctions committee (ad hoc)",
+                        "level":"Brown"
+                    },
+                    {
+                        "name":"Standing committee and ad hoc bodies",
+                        "level":"Brown"
+                    }]
+            },
+            {   "name": "Related Organizations",
+                "parent": "Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"IAEA",
+                        "level":"Brown"},
+                    {
+                        "name":"OPCW",
+                        "level":"Brown"}]
+            },
+            ] 
+    
+    },
+    {
+        "name": "UN Secretariat",
+        "parent": "",
+        "level":"Gold",
+        "children": [
+            {
+                "name":"Regional Commissions",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "level":"Gold"},
+                    {
+                        "name":"ECE",
+                        "level":"Gold"},
+                    {
+                        "name":"ECLAC",
+                            "level":"Gold"},
+                    {
+                        "name":"ESCAP",
+                        "level":"Gold"},
+                    {
+                        "name":"ESCWA",
+                        "level":"Gold"}]
+            },
+            {
+                "name":"Departments and Offices",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"EOSG",
+                        "level":"Gold"},
+                    {
+                        "name":"DCO",
+                        "level":"Gold"},
+                    {
+                        "name":"DESA",
+                        "level":"Gold"},
+                    {
+                        "name":"DGACM",
+                        "level":"Gold"},
+                    
+                            ]
+            },
+                    ]
+    }
+
+]
+}
+];
+    
+
+
+
+
+  
+
