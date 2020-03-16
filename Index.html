@@ -1,8 +1,15 @@
 <html>
 <head>
-	<title>Family Tree</title>
+	<meta charset="utf-8">
 
-<meta charset="utf-8">
+<title>UN network </title>
+
+<body>
+	<div id="header"><p>Visualise UN network in D3.js </p></div>
+<button type="button" onclick="update(data1)">Horizontal</button>
+<button type="button" onclick="update(data2)">Vertical</button>
+
+<script src="js/d3.v3.min.js"></script>
 
 <style>
 .node {
@@ -20,7 +27,7 @@
   }
    
   .node text {
-    font-size:10px; 
+    font-size:14px; 
     font-family:sans-serif;
   }
    
@@ -35,84 +42,226 @@
     stroke: red;
     stroke-width: 3px;
   }
-
-  .ghostCircle.show{
-      display:block;
-  }
-
-  .ghostCircle, .activeDrag .ghostCircle{
-       display: none;
-  }
 </style>
 
-<body>
-<script src="js/d3.v3.min.js"></script>
-
 <script>
-	var Familytree = [
+	var UNnetwork = [
   {
-    "name": "Hokkien Kinmen",
+    "name": "Principal organs of the United Nations",
     "parent": "null",
-    "level":"Blue",
+    "level":"",
     "children": [
       {
-        "name": "Lee Guan Chen",
-        "parent": "Hokkien Kinmen",
+        "name": "UN General Assembly",
+        "level":"Green",
         "children": [
-          {
-            "name": "Kinmen Big Brother",
-            "parent": "Lee Guan Chen"
-          },
-          {
-            "name": "Lee Kim Poh",
-            "parent": "Lee Guan Chen",
-            "value":"Year1930-2006",
-            "level":"Red",
-            "children": [
             {
-            	"name":"Lee Wing Fah",
-            	"parent":"Lee Kim Poh",
-            	"children":[
-            	{
-            		"name":"Lee Wen Chea",
-            		"parent":"Lee Wing Fah",
-            		"children":[
-            		{"name":"Lee Tze Hong"},
-            		{"name":"Lee Tze Chian"}]
-            	},
-            	{"name":"Lee Wen Howe"},
-            	{"name":"Lee Jing Yuh"},
-            	{"name":"Lee Wen Sheng"},
-            	{"name":"Lee Wen Ther"}]
+                "name": "Subsidiary Organs ",
+                "parent": "General Assembly",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":""}]
+            },  
+            { 
+                "name":"Funds and Programmes",
+                "level":"Green"
+            }, 
+            {
+                "name":"Research and Training",
+                "level":"Green"
             },
-            {"name":"Lee Eng Eng"},
-            {"name":"Lee Bee Bee"},
-            {"name":"Lee Peng Peng"},
-            {"name":"Lee Eng Kiat"},
-            {"name":"Lee Eng Chuan"}]
-          }
-        ]
+            {
+                "name":"Other Entities",
+                "level":"Green"
+            },
+            {
+                "name":"Related Organizations",
+                "level":"Green"
+            },
+            {
+                "name":"Peacebuilding Commission",
+                "level":"Green"
+            },
+            {
+                "name":"HLPF (High-level Political Forum on Sustainable Development",
+                "level":"Green"
+            }
+                    ]
       },
       {
-        "name": "Huang Chen Jia",
-        "parent": "Hokkien Kinmen"
-      }
-    ]
-  }
-];
+        "name": "UN Economic and Social council",
+        "level":"Blue",
+        "children": [
+            {
+            	"name":"Functional Commission",
+            	"parent":"Economic and Social council",
+                "level":"Blue",
+            	"children":[
+            	{
+            		  "name":"Crime",
+            		  "parent":"",
+                      "level":"Blue"},
+            	{
+            			"name":"Narcotic Drugs",
+                        "parent":"",
+            			"level":"Blue"},
+            	{
+            			"name":"Population and Development",
+                        "parent":"",
+            			"level":"Blue"}]
+            },
+            {
+            	"name":"Regional Commission",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECE",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+            	"name":"Other Bodies",
+                "parent":"",
+                "level":"Blue"
+            },
+            {
+            	"name":"Research and Training",
+            	"parent":"",
+                "level":"Blue"
+            },
+            {
+            	"name":"Specialized Agencies",
+            	"parent":"",
+                "level":"Blue"
+            }
+            ]
+      },
+      {
+        "name": "UN Security Council",
+        "parent": "",
+        "level":"Brown",
+        "children": [
+            {
+                "name":"Subsidiary Organs",
+                "parent":"Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"Counter-Terroism Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"International Residual Mechanism for Criminal Tribunals",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Military Stuff Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Peacekeeping operations and political missions",
+                        "level":"Brown"
+                    },
 
+                    {
+                        "name":"Sanctions committee (ad hoc)",
+                        "level":"Brown"
+                    },
+                    {
+                        "name":"Standing committee and ad hoc bodies",
+                        "level":"Brown"
+                    }]
+            },
+            {   "name": "Related Organizations",
+                "parent": "Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"IAEA",
+                        "level":"Brown"},
+                    {
+                        "name":"OPCW",
+                        "level":"Brown"}]
+            },
+            ] 
+    
+    },
+    {
+        "name": "UN Secretariat",
+        "parent": "",
+        "level":"Gold",
+        "children": [
+            {
+                "name":"Regional Commissions",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "level":"Gold"},
+                    {
+                        "name":"ECE",
+                        "level":"Gold"},
+                    {
+                        "name":"ECLAC",
+                            "level":"Gold"},
+                    {
+                        "name":"ESCAP",
+                        "level":"Gold"},
+                    {
+                        "name":"ESCWA",
+                        "level":"Gold"}]
+            },
+            {
+                "name":"Departments and Offices",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"EOSG",
+                        "level":"Gold"},
+                    {
+                        "name":"DCO",
+                        "level":"Gold"},
+                    {
+                        "name":"DESA",
+                        "level":"Gold"},
+                    {
+                        "name":"DGACM",
+                        "level":"Gold"},
+                    
+                            ]
+            },
+                    ]
+    }
+
+]
+}
+];
+    
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
 	width = 2000 - margin.right - margin.left,
-	height = 500 - margin.top - margin.bottom;
+	height =1000 - margin.top - margin.bottom;
 	
 var i = 0,
 	duration = 750,
 	root;
 
+
 var tree = d3.layout.tree()
 	.size([height, width]);
 
+// define a d3 diagonal projection for use by the node paths later on.
 var diagonal = d3.svg.diagonal()
 	.projection(function(d) { return [d.y, d.x]; });
 
@@ -122,11 +271,26 @@ var svg = d3.select("body").append("svg")
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-root = Familytree[0];
+// Define the root
+root = UNnetwork[0];
 root.x0 = height / 2;
 root.y0 = 0;
+
+// Collapse all children of roots children before rendering.
+root.children.forEach(function (d){
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+		collapse(d.children);
+	}});
+
+// Layout the tree initially
+    update(root);
   
-update(root);
+
 
 d3.select(self.frameElement).style("height", "500px");
 
@@ -139,6 +303,7 @@ function update(source) {
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 180; });
 
+  
   // Update the nodes…
   var node = svg.selectAll("g.node")
 	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
@@ -150,25 +315,30 @@ function update(source) {
 	  .on("click", click);
 
   nodeEnter.append("circle")
-	  .attr("r", 1e-6)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+	  .attr("r", function(d){return d.value;})
+	  .style("stroke","lightsteelblue")
+	  .style("fill", function(d) { return d.level; "#fff"; });
 
   nodeEnter.append("text")
 	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
 	  .attr("dy", ".35em")
 	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-	  .text(function(d) { return d.name; })
+	  .text(function(d) { return d.name})
+	  
 	  .style("fill-opacity", 1e-6);
+		
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
 	  .duration(duration)
 	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
+// Change the circle fill depending on whether it has children and is collapsed
   nodeUpdate.select("circle")
 	  .attr("r", 10)
 	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
+ 
+ // Fade the text in
   nodeUpdate.select("text")
 	  .style("fill-opacity", 1);
 
@@ -184,13 +354,14 @@ function update(source) {
   nodeExit.select("text")
 	  .style("fill-opacity", 1e-6);
 
-  // Update the links…
+  // Update the link
   var link = svg.selectAll("path.link")
 	  .data(links, function(d) { return d.target.id; });
 
   // Enter any new links at the parent's previous position.
   link.enter().insert("path", "g")
 	  .attr("class", "link")
+	  .style("stroke",function(d){return d.target.level;})
 	  .attr("d", function(d) {
 		var o = {x: source.x0, y: source.y0};
 		return diagonal({source: o, target: o});
@@ -229,7 +400,15 @@ function click(d) {
   update(d);
 }
 
+
 </script>
-	
-  </body>
+</body>
 </html>
+
+
+
+  
+
+
+ 
+
