@@ -1,0 +1,524 @@
+var UNsystem = 
+  {
+    "name": "Principal organs of the United Nations",
+    "parent": "null",
+    "level":"",
+    "children": [
+      {
+        "name": "UN General Assembly",
+        "level":"Green",
+        "children": [
+            {
+                "name": "Subsidiary Organs ",
+                "parent": "General Assembly",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"Disarmament Commission",
+                        "level":"Green"},
+                    {
+                        "name":"Human Rights Council",
+                        "level":"Green"},
+                    {
+                        "name":"International Law Commission",
+                        "level":"Green"},
+                    {
+                        "name":"Joint Inspection Unit(JIU)",
+                        "level":"Green"},
+                    {
+                        "name":"Main Committees",
+                        "level":"Green"},
+                    {
+                        "name":"Standing committees and ad hoc bodies",
+                        "level":"Green"}]
+            },  
+            { 
+                "name":"Funds and Programmes",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"UNDP",
+                        "level":"Green",
+                        "children":[
+                            {
+                                "name":"UNCDF",
+                                "level":"Green"},
+                            {
+                                "name":"UNV",
+                                "level":"Green"}]
+                    },
+                    {
+                        "name":"UNEP",
+                        "level":"Green"},
+                    {
+                        "name":"UNFPA",
+                        "level":"Green"},
+                    {
+                        "name":"UN-HABITAT",
+                        "level":"Green"},
+                    {
+                        "name":"UNICEF",
+                        "level":"Green"},
+                    {
+                        "name":"WFP",
+                        "level":"Green"}]
+            }, 
+            {
+                "name":"Research and Training",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"UNIDIR",
+                        "level":"Green"},
+                    {
+                        "name":"UNITAR",
+                        "level":"Green"},
+                    {
+                        "name":"UNSSC",
+                        "level":"Green"},
+                    {
+                        "name":"UNU",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Other Entities",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"ITC",
+                        "level":"Green"},
+                    {
+                        "name":"UNCTAD",
+                        "level":"Green"},
+                    {
+                        "name":"UNHCR",
+                        "level":"Green"},
+                    {
+                        "name":"UNOPS",
+                        "level":"Green"},
+                    {
+                        "name":"UNRWA",
+                        "level":"Green"},
+                    {
+                        "name":"UN-WOMEN",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Related Organizations",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"CTBTO Preparatory Commission",
+                        "level":"Green"},
+                    {
+                        "name":"IAEA",
+                        "level":"Green"},
+                    {
+                        "name":"ICC",
+                        "level":"Green"},
+                    {
+                        "name":"IOM",
+                        "level":"Green"},
+                    {
+                        "name":"ISA",
+                        "level":"Green"},
+                    {
+                        "name":"ITLOS",
+                        "level":"Green"},
+                    {
+                        "name":"OPCW",
+                        "level":"Green"},
+                    {
+                        "name":"WTO",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Peacebuilding Commission",
+                "level":"Green"
+            },
+            {
+                "name":"HLPF (High-level Political Forum on Sustainable Development",
+                "level":"Green"
+            }
+                    ]
+      },
+      {
+        "name": "UN Security Council",
+        "parent": "",
+        "level":"Brown",
+        "children": [
+            {
+                "name":"Subsidiary Organs",
+                "parent":"Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"Counter-Terroism Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"International Residual Mechanism for Criminal Tribunals",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Military Stuff Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Peacekeeping operations and political missions",
+                        "level":"Brown"
+                    },
+
+                    {
+                        "name":"Sanctions committee (ad hoc)",
+                        "level":"Brown"
+                    },
+                    {
+                        "name":"Standing committee and ad hoc bodies",
+                        "level":"Brown"
+                    }]
+            },
+            {   "name": "Related Organizations",
+                "parent": "Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"IAEA",
+                        "level":"Brown"},
+                    {
+                        "name":"OPCW",
+                        "level":"Brown"}]
+            },
+            { "name":"Peacebuilding Comission",
+              "parent":"Security Council",
+              "level":"Brown"}
+            ] 
+    
+    },
+    {
+        "name": "UN Economic and Social council",
+        "level":"Blue",
+        "children": [
+            {
+              "name":"Functional Commission",
+              "parent":"Economic and Social council",
+                "level":"Blue",
+              "children":[
+              {
+                  "name":"Crime Prevention and Criminal Justice",
+                  "parent":"",
+                      "level":"Blue"},
+              {
+                  "name":"Narcotic Drugs",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Population and Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Science and Technology for Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Social Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Statistics",
+                        "parent":"",
+                  "level":"Blue"},  
+              {
+                  "name":"Status of Women",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"United Nations Forum on Forests",
+                        "parent":"",
+                  "level":"Blue"}]
+            },
+            {
+              "name":"Regional Commission",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECE",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECLAC",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ESCAP",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ESCWA",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+              "name":"Other Bodies",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"Committee for Development Policy",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Committee of Experts on Public Administration",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Committee on Non-Governmental Organizations",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Permanent Forum on Indigenous Issues",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNAIDS",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNGEGN",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNGGIM",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+              "name":"Research and Training",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"UNICRI",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNRISD",
+                        "parent":"",
+                        "level":"Blue"}]    
+            },
+            {
+              "name":"Specialized Agencies",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"FAO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ICAO",
+                        "parent":"",
+                        "level":"Blue"},   
+                    {
+                        "name":"IFAD",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ILO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"IMF",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"IMO",
+                        "parent":"",
+                        "level":"Blue"}, 
+                    {
+                        "name":"ITU",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNESCO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNIDO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNWTO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UPU",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WHO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WIPO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WMO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WORLD BANK GROUP",
+                        "parent":"",
+                        "level":"Blue",
+                        "children":[
+                              {
+                                "name":"IBRD",
+                                "parent":"",
+                                "level":"Blue"},
+                              {
+                                "name":"IDA",
+                                "parent":"",
+                                "level":"Blue"},
+                              {
+                                "name":"IFC",
+                                "parent":"",
+                                "level":"Blue"}]
+                    }]
+            },
+            {
+              "name":"HLPF",
+                "parent":"",
+                "level":"Blue"}]
+    },
+    {
+        "name": "UN Secretariat",
+        "parent": "",
+        "level":"Gold",
+        "children": [
+            {
+                "name":"Regional Commissions",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "level":"Gold"},
+                    {
+                        "name":"ECE",
+                        "level":"Gold"},
+                    {
+                        "name":"ECLAC",
+                            "level":"Gold"},
+                    {
+                        "name":"ESCAP",
+                        "level":"Gold"},
+                    {
+                        "name":"ESCWA",
+                        "level":"Gold"}]
+            },
+            {
+                "name":"Departments and Offices",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"EOSG",
+                        "level":"Gold"},
+                    {
+                        "name":"DCO",
+                        "level":"Gold"},
+                    {
+                        "name":"DESA",
+                        "level":"Gold"},
+                    {
+                        "name":"DGACM",
+                        "level":"Gold"},
+                    { 
+                        "name":"DGC",
+                        "level":"Gold"},
+                    {
+                        "name":"DMSPC",
+                         "level":"Gold"},
+                    { 
+                        "name":"DOS",
+                       "level":"Gold"},
+                    {
+                      "name":"DPO",
+                       "level":"Gold"},
+                    { 
+                      "name":"DPPA",
+                     "level":"Gold"},
+
+                    {
+                        "name":"DSS",
+                         "level":"Gold"},
+                    {
+                        "name":"OCHA",
+                         "level":"Gold"},
+                    {
+                        "name":"OCT",
+                         "level":"Gold"},
+                    {
+                        "name":"ODA",
+                         "level":"Gold"},
+                     {
+                        "name":"OHCHR",
+                         "level":"Gold"},
+                     {
+                        "name":"OIOS",
+                         "level":"Gold"},
+                     {
+                        "name":"OLA",
+                         "level":"Gold"},
+                      {
+                        "name":"OSAA",
+                         "level":"Gold"},
+                      {
+                        "name":"SRSG/CAAC",
+                         "level":"Gold"}, 
+                      {
+                        "name":"SRSG/SVC",
+                         "level":"Gold"},
+                      {
+                        "name":"SRSG/VAC",
+                         "level":"Gold"},                        
+                      {
+                        "name":"UNDRR",
+                         "level":"Gold"},
+                      {
+                        "name":"UNODC",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOG",
+                         "level":"Gold"},
+                      {
+                        "name":"UN-OHRLLS",
+                         "level":"Gold"},
+                      {
+                        "name":"UNON",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOP",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOV",
+                         "level":"Gold"}]
+            },
+            ]},
+            {   "name":"International Court of Justice",
+                "parent":"",
+                "level":"purple"},
+
+            {   "name":"Trusteeship Council",
+                "parent":"",
+                "level":"aquamarine"}
+        ]};            
