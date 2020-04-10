@@ -1,4 +1,4 @@
-var UNsystem = 
+var UNsystem = [
   {
     "name": "Principal organs of the United Nations",
     "parent": "null",
@@ -521,4 +521,4 @@ var UNsystem =
             {   "name":"Trusteeship Council",
                 "parent":"",
                 "level":"aquamarine"}
-        ]};            
+        ]}];            
