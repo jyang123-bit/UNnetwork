@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UN system </title>
+
+<body>
+	<div id="header"><p>Visualise UN system in D3.js</p><p><b>6 Principal Organs ; 193 Member States  ; 5 Geographical Regions ; 6 Official Languages</p></div>
+	<button onclick="expandAll()">Expand All</button>
+  	<button onclick="collapseAll()">Collapse All</button>
+
+<style>
+ p { 
+    color:blue;
+    font-family:sans-serif;
+    }
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 14px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+</style>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script>
+var UNsystem = 
+  {
+    "name": "Principal organs of the United Nations",
+    "parent": "null",
+    "level":"",
+    "children": [
+      {
+        "name": "UN General Assembly",
+        "level":"Green",
+        "children": [
+            {
+                "name": "Subsidiary Organs ",
+                "parent": "General Assembly",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"Disarmament Commission",
+                        "level":"Green"},
+                    {
+                        "name":"Human Rights Council",
+                        "level":"Green"},
+                    {
+                        "name":"International Law Commission",
+                        "level":"Green"},
+                    {
+                        "name":"Joint Inspection Unit(JIU)",
+                        "level":"Green"},
+                    {
+                        "name":"Main Committees",
+                        "level":"Green"},
+                    {
+                        "name":"Standing committees and ad hoc bodies",
+                        "level":"Green"}]
+            },  
+            { 
+                "name":"Funds and Programmes",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"UNDP",
+                        "level":"Green",
+                        "children":[
+                            {
+                                "name":"UNCDF",
+                                "level":"Green"},
+                            {
+                                "name":"UNV",
+                                "level":"Green"}]
+                    },
+                    {
+                        "name":"UNEP",
+                        "level":"Green"},
+                    {
+                        "name":"UNFPA",
+                        "level":"Green"},
+                    {
+                        "name":"UN-HABITAT",
+                        "level":"Green"},
+                    {
+                        "name":"UNICEF",
+                        "level":"Green"},
+                    {
+                        "name":"WFP",
+                        "level":"Green"}]
+            }, 
+            {
+                "name":"Research and Training",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"UNIDIR",
+                        "level":"Green"},
+                    {
+                        "name":"UNITAR",
+                        "level":"Green"},
+                    {
+                        "name":"UNSSC",
+                        "level":"Green"},
+                    {
+                        "name":"UNU",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Other Entities",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"ITC",
+                        "level":"Green"},
+                    {
+                        "name":"UNCTAD",
+                        "level":"Green"},
+                    {
+                        "name":"UNHCR",
+                        "level":"Green"},
+                    {
+                        "name":"UNOPS",
+                        "level":"Green"},
+                    {
+                        "name":"UNRWA",
+                        "level":"Green"},
+                    {
+                        "name":"UN-WOMEN",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Related Organizations",
+                "level":"Green",
+                "children":[
+                    {
+                        "name":"CTBTO Preparatory Commission",
+                        "level":"Green"},
+                    {
+                        "name":"IAEA",
+                        "level":"Green"},
+                    {
+                        "name":"ICC",
+                        "level":"Green"},
+                    {
+                        "name":"IOM",
+                        "level":"Green"},
+                    {
+                        "name":"ISA",
+                        "level":"Green"},
+                    {
+                        "name":"ITLOS",
+                        "level":"Green"},
+                    {
+                        "name":"OPCW",
+                        "level":"Green"},
+                    {
+                        "name":"WTO",
+                        "level":"Green"}]
+            },
+            {
+                "name":"Peacebuilding Commission",
+                "level":"Green"
+            },
+            {
+                "name":"HLPF (High-level Political Forum on Sustainable Development",
+                "level":"Green"
+            }
+                    ]
+      },
+      {
+        "name": "UN Security Council",
+        "parent": "",
+        "level":"Brown",
+        "children": [
+            {
+                "name":"Subsidiary Organs",
+                "parent":"Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"Counter-Terroism Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"International Residual Mechanism for Criminal Tribunals",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Military Stuff Committee",
+                        "level":"Brown"
+                    },
+                    
+                    {
+                        "name":"Peacekeeping operations and political missions",
+                        "level":"Brown"
+                    },
+
+                    {
+                        "name":"Sanctions committee (ad hoc)",
+                        "level":"Brown"
+                    },
+                    {
+                        "name":"Standing committee and ad hoc bodies",
+                        "level":"Brown"
+                    }]
+            },
+            {   "name": "Related Organizations",
+                "parent": "Security Council",
+                "level":"Brown",
+                "children":[
+                    {
+                        "name":"IAEA",
+                        "level":"Brown"},
+                    {
+                        "name":"OPCW",
+                        "level":"Brown"}]
+            },
+            { "name":"Peacebuilding Comission",
+              "parent":"Security Council",
+              "level":"Brown"}
+            ] 
+    
+    },
+    {
+        "name": "UN Economic and Social council",
+        "level":"Blue",
+        "children": [
+            {
+              "name":"Functional Commission",
+              "parent":"Economic and Social council",
+                "level":"Blue",
+              "children":[
+              {
+                  "name":"Crime Prevention and Criminal Justice",
+                  "parent":"",
+                      "level":"Blue"},
+              {
+                  "name":"Narcotic Drugs",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Population and Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Science and Technology for Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Social Development",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"Statistics",
+                        "parent":"",
+                  "level":"Blue"},  
+              {
+                  "name":"Status of Women",
+                        "parent":"",
+                  "level":"Blue"},
+              {
+                  "name":"United Nations Forum on Forests",
+                        "parent":"",
+                  "level":"Blue"}]
+            },
+            {
+              "name":"Regional Commission",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECE",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ECLAC",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ESCAP",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ESCWA",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+              "name":"Other Bodies",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"Committee for Development Policy",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Committee of Experts on Public Administration",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Committee on Non-Governmental Organizations",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"Permanent Forum on Indigenous Issues",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNAIDS",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNGEGN",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNGGIM",
+                        "parent":"",
+                        "level":"Blue"}]
+            },
+            {
+              "name":"Research and Training",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"UNICRI",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNRISD",
+                        "parent":"",
+                        "level":"Blue"}]    
+            },
+            {
+              "name":"Specialized Agencies",
+                "parent":"",
+                "level":"Blue",
+                "children":[
+                    {
+                        "name":"FAO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ICAO",
+                        "parent":"",
+                        "level":"Blue"},   
+                    {
+                        "name":"IFAD",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"ILO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"IMF",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"IMO",
+                        "parent":"",
+                        "level":"Blue"}, 
+                    {
+                        "name":"ITU",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNESCO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNIDO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UNWTO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"UPU",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WHO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WIPO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WMO",
+                        "parent":"",
+                        "level":"Blue"},
+                    {
+                        "name":"WORLD BANK GROUP",
+                        "parent":"",
+                        "level":"Blue",
+                        "children":[
+                              {
+                                "name":"IBRD",
+                                "parent":"",
+                                "level":"Blue"},
+                              {
+                                "name":"IDA",
+                                "parent":"",
+                                "level":"Blue"},
+                              {
+                                "name":"IFC",
+                                "parent":"",
+                                "level":"Blue"}]
+                    }]
+            },
+            {
+              "name":"HLPF",
+                "parent":"",
+                "level":"Blue"}]
+    },
+    {
+        "name": "UN Secretariat",
+        "parent": "",
+        "level":"Gold",
+        "children": [
+            {
+                "name":"Regional Commissions",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"ECA",
+                        "level":"Gold"},
+                    {
+                        "name":"ECE",
+                        "level":"Gold"},
+                    {
+                        "name":"ECLAC",
+                            "level":"Gold"},
+                    {
+                        "name":"ESCAP",
+                        "level":"Gold"},
+                    {
+                        "name":"ESCWA",
+                        "level":"Gold"}]
+            },
+            {
+                "name":"Departments and Offices",
+                "parent":"Secretariat",
+                "level":"Gold",
+                "children":[
+                    {
+                        "name":"EOSG",
+                        "level":"Gold"},
+                    {
+                        "name":"DCO",
+                        "level":"Gold"},
+                    {
+                        "name":"DESA",
+                        "level":"Gold"},
+                    {
+                        "name":"DGACM",
+                        "level":"Gold"},
+                    { 
+                        "name":"DGC",
+                        "level":"Gold"},
+                    {
+                        "name":"DMSPC",
+                         "level":"Gold"},
+                    { 
+                        "name":"DOS",
+                       "level":"Gold"},
+                    {
+                      "name":"DPO",
+                       "level":"Gold"},
+                    { 
+                      "name":"DPPA",
+                     "level":"Gold"},
+
+                    {
+                        "name":"DSS",
+                         "level":"Gold"},
+                    {
+                        "name":"OCHA",
+                         "level":"Gold"},
+                    {
+                        "name":"OCT",
+                         "level":"Gold"},
+                    {
+                        "name":"ODA",
+                         "level":"Gold"},
+                     {
+                        "name":"OHCHR",
+                         "level":"Gold"},
+                     {
+                        "name":"OIOS",
+                         "level":"Gold"},
+                     {
+                        "name":"OLA",
+                         "level":"Gold"},
+                      {
+                        "name":"OSAA",
+                         "level":"Gold"},
+                      {
+                        "name":"SRSG/CAAC",
+                         "level":"Gold"}, 
+                      {
+                        "name":"SRSG/SVC",
+                         "level":"Gold"},
+                      {
+                        "name":"SRSG/VAC",
+                         "level":"Gold"},                        
+                      {
+                        "name":"UNDRR",
+                         "level":"Gold"},
+                      {
+                        "name":"UNODC",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOG",
+                         "level":"Gold"},
+                      {
+                        "name":"UN-OHRLLS",
+                         "level":"Gold"},
+                      {
+                        "name":"UNON",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOP",
+                         "level":"Gold"},
+                      {
+                        "name":"UNOV",
+                         "level":"Gold"}]
+            },
+            ]},
+            {   "name":"International Court of Justice",
+                "parent":"",
+                "level":"purple"},
+
+            {   "name":"Trusteeship Council",
+                "parent":"",
+                "level":"aquamarine"}
+        ]};            
+
+// Set the dimensions and margins of the diagram
+var margin = {top: 20, right: 120, bottom: 20, left: 120},
+    width = 5000 - margin.left - margin.right,
+    height = 3600 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate("
+          + margin.left + "," + margin.top + ")");
+
+var i = 0,
+    duration = 750,
+    root;
+
+// declares a tree layout and assigns the size
+var treemap = d3.tree().size([height, width]);
+
+// Assigns parent, children, height, depth
+root = d3.hierarchy(UNsystem, function(d) { return d.children; });
+root.x0 = height / 2;
+root.y0 = 0;
+
+// Collapse after the second level
+//root.children.forEach(collapse);
+
+update(root);
+
+// Collapse the node and all it's children
+function collapse(d) {
+  if(d.children) {
+    d._children = d.children
+    d._children.forEach(collapse)
+    d.children = null
+  }
+}
+
+function update(source) {
+
+  // Assigns the x and y position for the nodes
+  var UNsystem = treemap(root);
+
+  // Compute the new tree layout.
+  var nodes = UNsystem.descendants(),
+      links = UNsystem.descendants().slice(1);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d){ d.y = d.depth * 180});
+
+  // ****************** Nodes section ***************************
+
+  // Update the nodes...
+  var node = svg.selectAll('g.node')
+      .data(nodes, function(d) {return d.id || (d.id = ++i); });
+
+  // Enter any new modes at the parent's previous position.
+  var nodeEnter = node.enter().append('g')
+      .attr('class', 'node')
+      .attr("transform", function(d) {
+        return "translate(" + source.y0 + "," + source.x0 + ")";
+    })
+    .on('click', click);
+
+  // Add Circle for the nodes
+  nodeEnter.append('circle')
+      .attr('class', 'node')
+      .attr('r', 1e-6)
+      .style("fill", function(d) {
+          return d._children ? "lightsteelblue" : "#fff";
+      });
+
+  // Add labels for the nodes
+  nodeEnter.append('text')
+      .attr("dy", ".35em")
+      .attr("x", function(d) {
+          return d.children || d._children ? -13 : 13;
+      })
+      .attr("text-anchor", function(d) {
+          return d.children || d._children ? "end" : "start";
+      })
+      .text(function(d) { return d.data.name; });
+
+
+  // UPDATE
+  var nodeUpdate = nodeEnter.merge(node);
+
+  // Transition to the proper position for the node
+  nodeUpdate.transition()
+    .duration(duration)
+    .attr("transform", function(d) { 
+        return "translate(" + d.y + "," + d.x + ")";
+     });
+
+  // Update the node attributes and style
+  nodeUpdate.select('circle.node')
+    .attr('r', 10)
+    .style("fill", function(d) {
+        return d._children ? "lightsteelblue" : "#fff";
+    })
+    .attr('cursor', 'pointer');
+
+
+  // Remove any exiting nodes
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) {
+          return "translate(" + source.y + "," + source.x + ")";
+      })
+      .remove();
+
+  // On exit reduce the node circles size to 0
+  nodeExit.select('circle')
+    .attr('r', 1e-6);
+
+  // On exit reduce the opacity of text labels
+  nodeExit.select('text')
+    .style('fill-opacity', 1e-6);
+
+  // ****************** links section ***************************
+
+  // Update the links...
+  var link = svg.selectAll('path.link')
+      .data(links, function(d) { return d.id; });
+
+  // Enter any new links at the parent's previous position.
+  var linkEnter = link.enter().insert('path', "g")
+      .attr("class", "link")
+      .style("stroke",function(d){return d.data.level;})
+      .attr('d', function(d){
+        var o = {x: source.x0, y: source.y0}
+        return diagonal(o, o)
+      });
+
+  // UPDATE
+  var linkUpdate = linkEnter.merge(link);
+
+  // Transition back to the parent element position
+  linkUpdate.transition()
+      .duration(duration)
+      .attr('d', function(d){ return diagonal(d, d.parent) });
+
+  // Remove any exiting links
+  var linkExit = link.exit().transition()
+      .duration(duration)
+      .attr('d', function(d) {
+        var o = {x: source.x, y: source.y}
+        return diagonal(o, o)
+      })
+      .remove();
+
+  // Store the old positions for transition.
+  nodes.forEach(function(d){
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+
+  // Creates a curved (diagonal) path from parent to the child nodes
+  function diagonal(s, d) {
+
+    path = `M ${s.y} ${s.x}
+            C ${(s.y + d.y) / 2} ${s.x},
+              ${(s.y + d.y) / 2} ${d.x},
+              ${d.y} ${d.x}`
+
+    return path
+  }
+
+  // Toggle children on click.
+  function click(d) {
+    if (d.children) {
+        d._children = d.children;
+        d.children = null;
+      } else {
+        d.children = d._children;
+        d._children = null;
+      }
+    update(d);
+  }
+}
+
+  function expand(d){   
+    var children = (d.children)?d.children:d._children;
+    if (d._children) {        
+        d.children = d._children;
+        d._children = null;       
+    }
+    if(children)
+      children.forEach(expand);
+}
+
+function expandAll(){
+    expand(root); 
+    update(root);
+}
+
+function collapseAll(){
+    root.children.forEach(collapse);
+    collapse(root);
+    update(root);
+}   
+
+</script>
+</body>
+</html>
+    
