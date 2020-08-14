@@ -1,7 +1,7 @@
 # UNsystem
 Layout United Nation network in D3.js
 
-![D3treelayout](https://user-images.githubusercontent.com/58260451/90148483-f0faaa80-ddb5-11ea-9bdc-6fdab04fbdd1.png)
+![D3treelayout](https://github.com/jyang123-bit/Website/blob/master/assets/images/d3network.png)
 
 >Code for horizontal, vertical, v3 and v5 has its own .js file.  
 
