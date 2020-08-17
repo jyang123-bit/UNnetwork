@@ -1,6 +1,6 @@
 # UN Network
 
-![D3treelayout](https://github.com/jyang123-bit/Website/blob/master/assets/images/d3network.png)
+![D3treelayout](https://user-images.githubusercontent.com/58260451/90362334-f6e0dc00-e092-11ea-8cf3-92f1c7fdb1bd.png)
 
 
 >Code for horizontal, vertical, v3 and v5 has its own .js file.  
